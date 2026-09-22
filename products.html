@@ -1,0 +1,89 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Shop Mobile Accessories | Tech Ali</title><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link rel="stylesheet" href="style.css"><meta name="description" content="Explore Tech Ali mobile accessories including chargers, power banks, cables, phone cases and audio essentials."><meta property="og:title" content="Shop Mobile Accessories | Tech Ali"><meta property="og:description" content="Explore Tech Ali mobile accessories including chargers, power banks, cables, phone cases and audio essentials."><meta property="og:type" content="website"></head><body><div class="topbar" aria-label="Store announcements"><div class="topbar-track"><span>🚚 Free Delivery Nationwide on Orders Above PKR 3,000 • ⚡ Quality Checked Products</span><span>🚚 Free Delivery Nationwide on Orders Above PKR 3,000 • ⚡ Quality Checked Products</span><span>🚚 Free Delivery Nationwide on Orders Above PKR 3,000 • ⚡ Quality Checked Products</span><span>🚚 Free Delivery Nationwide on Orders Above PKR 3,000 • ⚡ Quality Checked Products</span></div></div>
+<header class="header"><div class="container nav"><a class="logo" href="index.html" aria-label="Tech Ali"><img class="brand-logo" src="tech-ali-logo.png" alt="Tech Ali"></a><div class="search"><input id="searchInput" placeholder="Search products..."><i class="fa-solid fa-magnifying-glass"></i></div><div class="actions"><a class="btn round desktop-only" href="about.html">About</a><a class="btn dark round" href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart (<span data-cart-count>0</span>)</a></div></div></header>
+<nav class="catbar"><div class="container cats" id="categories"></div></nav><main><section class="page-head"><div class="container"><div class="crumbs"><a href="index.html">Home</a> / Shop</div><h1>Shop</h1><p>Filter products by category, search the catalog and open any card for full product details.</p></div></section><section class="section" style="padding-top:15px"><div class="container"><div class="section-head"><div><h2>All Products</h2><div class="results" id="results"></div></div><select class="sort" id="sortSelect"><option value="featured">Sort: Featured</option><option value="price-low">Price: Low to High</option><option value="price-high">Price: High to Low</option><option value="name">Name: A-Z</option></select></div><div class="grid" id="productGrid"></div><div class="empty" data-empty style="display:none">No products match your search.</div></div></section></main><footer class="site-footer">
+
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div class="footer-column footer-brand">
+      <h2>TECH ALI</h2>
+      <p>
+        Premium Mobile Accessories made with style,
+        innovation and quality.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a><a href="returns.html">Returns & Exchanges</a>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-column">
+      <h3>Contact Info</h3>
+
+      <p>📞 0323 7585103</p>
+      <p>💬 WhatsApp Support Available</p>
+    </div>
+
+    <!-- WhatsApp -->
+    <div class="footer-column">
+      <h3>Orders</h3>
+
+      <a
+        class="footer-whatsapp"
+        href="https://wa.me/923237585103?text=Hello%20Tech%20Ali,%20I%20need%20support."
+        target="_blank"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+        WhatsApp Support
+      </a>
+    </div>
+
+  </div>
+<div id="toast" class="toast"></div>
+
+<a href="cart.html" class="floating-cart" aria-label="Open cart">
+  <i class="fa-solid fa-cart-shopping"></i>
+  <span data-cart-count>0</span>
+</a>
+  <!-- Bottom -->
+ <script src="product-data.js"></script>
+<script src="script.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  function refreshFloatingCart() {
+    try {
+      const savedCart = localStorage.getItem('techAliCart');
+      const cartItems = savedCart ? JSON.parse(savedCart) : [];
+
+      const total = cartItems.reduce(function(sum, item) {
+        return sum + Number(item.qty || 0);
+      }, 0);
+
+      document.querySelectorAll('[data-cart-count]').forEach(function(el) {
+        el.textContent = total;
+        el.style.display = 'flex';
+      });
+
+    } catch (error) {
+      console.error('Floating cart error:', error);
+    }
+  }
+
+  refreshFloatingCart();
+
+  /* ADD TO CART ke baad bhi count update */
+  setInterval(refreshFloatingCart, 500);
+});
+</script>
+
+</body>
+</html>

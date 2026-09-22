@@ -1,0 +1,3 @@
+Tech Ali product image mapping
+
+Main and alternative product images are stored under images/products/<product-id>/. Product cards use the first image; product detail pages show all available images.

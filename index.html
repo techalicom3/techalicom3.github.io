@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tech Ali | Mobile Accessories Pakistan</title><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"><link rel="stylesheet" href="style.css"><meta name="description" content="Shop mobile accessories in Pakistan at Tech Ali. Explore chargers, power banks, cables, phone cases and audio accessories."><meta property="og:title" content="Tech Ali | Mobile Accessories Pakistan"><meta property="og:description" content="Shop mobile accessories in Pakistan at Tech Ali. Explore chargers, power banks, cables, phone cases and audio accessories."><meta property="og:type" content="website"></head><body><div class="topbar" aria-label="Store announcements"><div class="topbar-track"><span>🚚 Free Delivery Nationwide on Orders Above PKR 3,000 • ⚡ Quality Checked Products</span><span>🚚 Free Delivery Nationwide on Orders Above PKR 3,000 • ⚡ Quality Checked Products</span><span>🚚 Free Delivery Nationwide on Orders Above PKR 3,000 • ⚡ Quality Checked Products</span><span>🚚 Free Delivery Nationwide on Orders Above PKR 3,000 • ⚡ Quality Checked Products</span></div></div>
+<header class="header"><div class="container nav"><a class="logo" href="index.html" aria-label="Tech Ali"><img class="brand-logo" src="tech-ali-logo.png" alt="Tech Ali"></a><div class="search"><input id="searchInput" placeholder="Search products..."><i class="fa-solid fa-magnifying-glass"></i></div><div class="actions"><a class="btn round desktop-only" href="about.html">About</a><a class="btn dark round" href="cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart (<span data-cart-count>0</span>)</a></div></div></header>
+<nav class="catbar"><div class="container cats" id="categories"></div></nav><main><section class="hero">
+  <div class="container">
+    <div class="hero-shell">
+      <div class="hero-slider" id="heroSlider" aria-label="Tech Ali featured products">
+        <div class="hero-track" id="heroTrack"></div>
+       
+        <div class="hero-dots" id="heroDots" aria-label="Slide navigation"></div>
+      </div>
+    </div>
+  </div>
+</section><section class="section"><div class="container"><div class="section-head"><div><h2>Featured Products</h2><p>Open any card to view the complete product page.</p></div><a class="btn" href="products.html">View All</a></div><div class="grid" id="productGrid" data-home-featured-limit="8"></div></div></section><section class="section trust-section"><div class="container"><div class="section-head"><div><h2>Shop with Confidence</h2><p>Clear ordering information and support from Tech Ali.</p></div></div><div class="trust-grid">
+<div class="trust-item"><i class="fa-solid fa-money-bill-wave"></i><div><h3>Cash on Delivery</h3><p>Pay when your order arrives, where COD is available.</p></div></div>
+<div class="trust-item"><i class="fa-solid fa-shield-halved"></i><div><h3>Quality Checked</h3><p>Products are checked before dispatch.</p></div></div>
+<div class="trust-item"><i class="fa-solid fa-rotate"></i><div><h3>Returns & Exchanges</h3><p>Contact us to discuss an issue; eligibility depends on our policy.</p></div></div>
+<div class="trust-item"><i class="fa-solid fa-truck-fast"></i><div><h3>Nationwide Delivery</h3><p>Shipping available across Pakistan.</p></div></div>
+</div><div class="payment-note"><h3>Ordering & Payment</h3><p>Browse products, add items to your cart and submit your order through checkout. Cash on Delivery and WhatsApp support are available as displayed. Online wallet/card payment is not currently advertised as an active option.</p><a class="btn dark" href="checkout.html">Continue to Checkout</a></div></div></section><div class="container benefits"><div class="benefit"><i class="fa-solid fa-truck-fast"></i><div><b>Fast Delivery</b><span>Nationwide shipping available</span></div></div><div class="benefit"><i class="fa-solid fa-shield-halved"></i><div><b>Quality Focused</b><span>Products checked before dispatch</span></div></div><div class="benefit"><i class="fa-brands fa-whatsapp"></i><div><b>Easy Ordering</b><span>Cart → checkout → order database</span></div></div><div class="benefit"><i class="fa-solid fa-images"></i><div><b>Product Galleries</b><span>Multiple photos per product</span></div></div></div></main><footer class="site-footer">
+
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div class="footer-column footer-brand">
+      <h2>TECH ALI</h2>
+      <p>
+        Premium Mobile Accessories made with style,
+        innovation and quality.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>     <a href="returns.html">Returns & Exchanges</a>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-column">
+      <h3>Contact Info</h3>
+
+      <p>📞 0323 7585103</p>
+      <p>💬 WhatsApp Support Available</p>
+    </div>
+
+    <!-- WhatsApp -->
+    <div class="footer-column">
+      <h3>Orders</h3>
+
+      <a
+        class="footer-whatsapp"
+        href="https://wa.me/923237585103?text=Hello%20Tech%20Ali,%20I%20need%20support."
+        target="_blank"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+        WhatsApp Support
+      </a>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <p>© 2026 Tech Ali | All Rights Reserved.</p>
+    <p>Innovation • Solutions • Tomorrow</p>
+  </div>
+
+</footer>
+
+<div id="toast" class="toast"></div>
+
+<a href="cart.html" class="floating-cart" aria-label="Open cart">
+  <i class="fa-solid fa-cart-shopping"></i>
+  <span data-cart-count>0</span>
+</a>
+
+<script src="product-data.js"></script>
+<script src="script.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  function refreshFloatingCart() {
+    try {
+      const savedCart = localStorage.getItem('techAliCart');
+      const cartItems = savedCart ? JSON.parse(savedCart) : [];
+
+      const total = cartItems.reduce(function(sum, item) {
+        return sum + Number(item.qty || 0);
+      }, 0);
+
+      document.querySelectorAll('[data-cart-count]').forEach(function(el) {
+        el.textContent = total;
+        el.style.display = 'flex';
+      });
+
+    } catch (error) {
+      console.error('Floating cart error:', error);
+    }
+  }
+
+  refreshFloatingCart();
+
+  /* ADD TO CART ke baad bhi count update */
+  setInterval(refreshFloatingCart, 500);
+});
+</script>
+
+</body>
+</html>
