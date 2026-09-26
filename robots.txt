@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://techali3.vercel.app/sitemap.xml
